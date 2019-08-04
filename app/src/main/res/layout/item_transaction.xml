@@ -28,5 +28,5 @@
             android:layout_height="wrap_content"
             android:id="@+id/txt_transaction_value"
             android:layout_marginTop="35dp"
-            android:layout_marginLeft="350dp" />
+            android:layout_marginLeft="300dp" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
