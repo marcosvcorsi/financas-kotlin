@@ -1,24 +1,32 @@
 package com.example.financas_kotlin.ui.adapter
 
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import com.example.financas_kotlin.R
 
-class TransactionListAdapter : BaseAdapter() {
-    override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+class TransactionListAdapter(ctx: Context,
+                             list: List<String>) : BaseAdapter() {
+
+    private val context = ctx
+    private val transactionList = list
+
+    override fun getView(pos: Int, view: View?, parent: ViewGroup?): View {
+        return LayoutInflater.from(context).inflate(R.layout.item_transaction, parent, false)
     }
 
-    override fun getItem(p0: Int): Any {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun getItem(pos: Int): String {
+        return transactionList[pos]
     }
 
     override fun getItemId(p0: Int): Long {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return 0
     }
 
     override fun getCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return transactionList.size
     }
 
 }

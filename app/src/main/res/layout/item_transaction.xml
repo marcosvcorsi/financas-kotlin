@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_despesa"
+            android:id="@+id/image_transaction_type"
+            android:background="@color/colorPrimary"
+            android:layout_margin="5dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_transaction_name"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="100dp" />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_transaction_date"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="100dp" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_transaction_value"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="350dp" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
