@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import androidx.core.content.ContextCompat
 import com.example.financas_kotlin.R
+import com.example.financas_kotlin.extension.formatCost
 import com.example.financas_kotlin.extension.formatDateBR
+import com.example.financas_kotlin.extension.limitAt
 import com.example.financas_kotlin.model.Transaction
 import com.example.financas_kotlin.model.TransactionType
 import kotlinx.android.synthetic.main.item_transaction.view.*
@@ -18,13 +20,15 @@ class TransactionListAdapter(ctx: Context,
     private val context = ctx
     private val transactionList = list
 
+    private val limiteDaCategoria = 14
+
     override fun getView(pos: Int, view: View?, parent: ViewGroup?): View {
         val createdView = LayoutInflater.from(context).inflate(R.layout.item_transaction, parent, false)
 
         val transaction = getItem(pos)
 
-        createdView.txt_transaction_value.text = transaction.valor.toString()
-        createdView.txt_transaction_name.text = transaction.categoria
+        createdView.txt_transaction_value.text = transaction.valor.formatCost()
+        createdView.txt_transaction_name.text = transaction.categoria.limitAt(limiteDaCategoria)
         createdView.txt_transaction_date.text = transaction.data.formatDateBR()
 
         if(transaction.tipo == TransactionType.RECEITA){

@@ -4,6 +4,7 @@ import java.math.BigDecimal
 import java.util.*
 
 class Transaction(val valor: BigDecimal,
-                  val categoria: String,
+                  val categoria: String = "Indefinida",
                   val tipo: TransactionType,
-                  val data: Calendar = Calendar.getInstance())
+                  val data: Calendar = Calendar.getInstance()){
+}
