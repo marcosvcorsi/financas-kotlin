@@ -7,7 +7,5 @@ import java.util.Locale
 fun BigDecimal.formatCost(): String{
     val currencyInstance = DecimalFormat.getCurrencyInstance(Locale("pt", "br"))
 
-    val format = currencyInstance.format(this)
-
-    return format.replace("R$", "R$ ");
+    return currencyInstance.format(this).replace("R$", "R$ ")
 }

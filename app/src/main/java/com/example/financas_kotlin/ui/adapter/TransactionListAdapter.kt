@@ -14,11 +14,8 @@ import com.example.financas_kotlin.model.Transaction
 import com.example.financas_kotlin.model.TransactionType
 import kotlinx.android.synthetic.main.item_transaction.view.*
 
-class TransactionListAdapter(ctx: Context,
-                             list: List<Transaction>) : BaseAdapter() {
-
-    private val context = ctx
-    private val transactionList = list
+class TransactionListAdapter(private val context: Context,
+                             private val transactionList: List<Transaction>) : BaseAdapter() {
 
     private val limiteDaCategoria = 14
 
